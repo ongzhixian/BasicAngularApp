@@ -77,6 +77,9 @@ See: https://docs.github.com/en/pages/getting-started-with-github-pages/configur
 
 https://<user_name>.github.io/<project_name>
 
+## Webhints
+
+ `npm create hintrc`
 
 ## Using a different Angular version from installed version
 
