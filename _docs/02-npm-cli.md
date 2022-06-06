@@ -5,13 +5,16 @@
 ```
 npm install -g @angular/cli
 ng new basic-angular-app
+
+In `basic-angular-app` folder:
+
 ng serve --open
 ng serve --port 9800
 
-ng build --output-path docs --base-href /basic-angular-app/
+ng build --output-path ../docs --base-href /BasicAngularApp/
 copy .\docs\index.html .\docs\404.html
 
-View at 
+View at:
 https://ongzhixian.github.io/BasicAngularApp/
 
 ```
@@ -45,7 +48,10 @@ This is the simplest production-ready deployment of your application.
 
 ### Deploy to GitHub Pages
 
-Create and check out a git branch named gh-pages
+
+
+Create and check out a git branch named gh-pages 
+(optional: you can choose `main` branch too)
 
 `git checkout -b gh-pages`
 
@@ -53,12 +59,21 @@ Build your project using the Github project name, with the Angular CLI command `
 where your_project_name is the name of the project that you gave the GitHub repository in step 1.
 
 Be sure to include the slashes on either side of your project name as in /your_project_name/.
+ZX: This is a bit misleading. Bear in mind when deployed, we will be viewing the pages at:
+    https://ongzhixian.github.io/BasicAngularApp/
+    Which means `/your_project_name/` is really `/<repository-name>/`
 
 `ng build --output-path docs --base-href /your_project_name/`
 
 Make a copy of docs/index.html and name it docs/404.html.
 
 `copy .\docs\index.html .\docs\404.html`
+
+On the GitHub project page, go to `Settings` tab.
+On the left column, under `Code and automation` select `Pages` view.
+Under source, select gh-pages branch and /docs folder.
+ 
+See: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source
 
 https://<user_name>.github.io/<project_name>
 
