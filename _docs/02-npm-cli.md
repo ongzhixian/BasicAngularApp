@@ -81,6 +81,14 @@ https://<user_name>.github.io/<project_name>
 
  `npm create hintrc`
 
+##  Angular Schematics
+
+ng generate @angular/material:dashboard basic-dashboard
+ng generate @angular/material:navigation basic-navigation
+
+ng generate component sample-page1
+ng generate component sample-page2
+
 ## Using a different Angular version from installed version
 
 Install npx from npm
