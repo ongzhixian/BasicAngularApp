@@ -9,6 +9,8 @@ const routes: Routes = [
   { path: 'dashboard', component: BasicDashboardComponent },
   { path: 'sample-page1', component: SamplePage1Component },
   { path: 'sample-page2', component: SamplePage2Component },
+  { path: '',   redirectTo: '/dashboard', pathMatch: 'full' }, // default to dashboard
+  { path: '**', component: BasicDashboardComponent },  // Wildcard route for a 404 page PageNotFoundComponent
 ];
 
 @NgModule({
