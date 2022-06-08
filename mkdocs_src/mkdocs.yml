@@ -1,6 +1,20 @@
 site_name: Basic Angular App
 site_description: Documentation site for Basic Angular App
 site_author: Ong Zhi Xian
-copyright: Ong Zhi Xian
+copyright: Copyright &copy; 2022 <a href="#">Ong Zhi Xian</a>
 docs_dir: src
-site_dir: ../docs/publish
+site_dir: ../docs/docs
+nav:
+  - Home: index.md
+  - User Guide:
+    - Overview: guide/index.md
+    - Page1: guide/sample-page1.md
+    - Page2: guide/sample-page2.md
+    - Configuration:
+      - Page1: guide/configuration/config-page1.md
+      - Page2: guide/configuration/config-page2.md
+  - Developer Guide:
+    - Overview: guide/index.md
+  - About:
+    - Release Notes: about/release-notes.md
+    - License: about/license.md
