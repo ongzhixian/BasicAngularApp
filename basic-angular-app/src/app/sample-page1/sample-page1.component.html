@@ -1,1 +1,31 @@
-<p>sample-page1 works!</p>
+<div class="grid-container">
+    <h1 class="mat-h1">sample-page1 works</h1>
+    <mat-grid-list cols="2" rowHeight="350px">
+
+        <mat-grid-tile>
+            <p>sample-page1 works!</p>
+
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <div>
+                <label for="nameText">sa</label>
+                Enter Your Name: <input type="text" id="nameText" [(ngModel)]="name" />
+                <br />
+                <button (click)="greet()">Greet Me!</button>
+
+                <button (click)="getData()">Get data</button>
+            </div>
+
+            <div class="example-container">
+                <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+                    <mat-label>Enter some input</mat-label>
+                    <input matInput #input maxlength="10" placeholder="Ex. Nougat">
+                    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+
+
+    </mat-grid-list>
+</div>

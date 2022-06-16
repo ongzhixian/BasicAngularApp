@@ -24,6 +24,12 @@ ng add @angular/material
 ng add @angular/pwa
 ```
 
+## Install MSAL Browser and MSAL Angular in your application
+MSAL Angular 	Microsoft Authentication Library for JavaScript Angular Wrapper
+MSAL Browser 	Microsoft Authentication Library for JavaScript v2 browser package
+
+`npm install @azure/msal-browser @azure/msal-angular `
+
 ## Generator
 
 ng generate component xyz
@@ -88,6 +94,8 @@ ng generate @angular/material:navigation basic-navigation
 
 ng generate component sample-page1
 ng generate component sample-page2
+ng generate component home
+ng generate component profile
 
 ## Using a different Angular version from installed version
 
@@ -107,3 +115,7 @@ But I recommend you use npx prefix to every command that uses ng as follows.
 `npx ng generate component my-component`
 
 Here the npx look for the ng command exists locally in ./node_modules/.bin/ directory and executes it.
+
+https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/docs/v2-docs/configuration.md
+
+https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-angular-auth-code
