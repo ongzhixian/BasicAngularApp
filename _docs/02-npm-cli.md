@@ -97,7 +97,6 @@ ng generate @schematics/angular:component pages/sample-page4
 
 ng generate my-schematic-name --collection collection-name
 
-
 Note about naming:
 
 Maybe its better to generate 
