@@ -89,6 +89,26 @@ ng generate @angular/material:navigation basic-navigation
 ng generate component sample-page1
 ng generate component sample-page2
 
+ The above is really using schematics from `@schematics/angular` package.
+ So the above can be written as the following as well:
+
+ng generate my-schematic-collection:my-schematic-name
+ng generate @schematics/angular:component pages/sample-page4
+
+ng generate my-schematic-name --collection collection-name
+
+
+Note about naming:
+
+Maybe its better to generate 
+
+ng generate component pages/sample-page1  => place in pages folder
+ng generate component pages/sample-page2  => place in pages
+ng generate component pages/sample-page3  => place in src/app/pages/sample-page3/sample-page3.component.(html|spec.ts|ts|css)
+ng generate @schematics/angular:component pages/sample-page4
+
+ng generate service services/sample-service1
+
 ## Using a different Angular version from installed version
 
 Install npx from npm
@@ -107,3 +127,4 @@ But I recommend you use npx prefix to every command that uses ng as follows.
 `npx ng generate component my-component`
 
 Here the npx look for the ng command exists locally in ./node_modules/.bin/ directory and executes it.
+
