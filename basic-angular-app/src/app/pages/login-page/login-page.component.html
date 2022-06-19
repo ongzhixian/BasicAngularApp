@@ -1,0 +1,26 @@
+<div>
+
+    <h1>User credentials</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" placeholder="Account username" value="test" autocomplete="off" >
+        </mat-form-field>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" type="password" placeholder="Account password" value="test" autocomplete="off" >
+            </mat-form-field>
+        </div>
+
+        <div>
+            <button mat-raised-button color="primary" [disabled]="!loginForm.valid" type="submit">Log in</button>
+        </div>
+    </form>
+
+    <p style="height:16em">&nbsp;</p>
+
+</div>
