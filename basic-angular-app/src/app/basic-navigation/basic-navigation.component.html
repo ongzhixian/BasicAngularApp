@@ -8,7 +8,12 @@
       <a mat-list-item routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a>
       <a mat-list-item routerLink="/sample-page1" routerLinkActive="active" ariaCurrentWhenActive="page">Sample page 1</a>
       <a mat-list-item routerLink="/sample-page2" routerLinkActive="active" ariaCurrentWhenActive="page">Sample page 2</a>
+      <a mat-list-item routerLink="/sample-page3" routerLinkActive="active" ariaCurrentWhenActive="page">Sample page 3</a>
+      <a mat-list-item routerLink="/sample-page4" routerLinkActive="active" ariaCurrentWhenActive="page">Sample page 4</a>
+      <a mat-list-item routerLink="/login-page" routerLinkActive="active" ariaCurrentWhenActive="page">Login page</a>
       <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item (click)="logout()" ariaCurrentWhenActive="page">Log out</a>
+      
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
