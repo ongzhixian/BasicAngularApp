@@ -30,7 +30,7 @@ import { LogoutPageComponent } from './pages/logout-page/logout-page.component';
 
 import { CredentialInterceptor } from './interceptors/credential.interceptor';
 import { ApiErrorInterceptor } from './interceptors/api-error.interceptor';
-import { FakeApiInterceptor } from './interceptors/fake-api.interceptor';
+import { fakeApiInterceptorProvider } from './interceptors/fake-api.interceptor';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,7 @@ import { FakeApiInterceptor } from './interceptors/fake-api.interceptor';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: CredentialInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ApiErrorInterceptor, multi: true },
-    FakeApiInterceptor
+    fakeApiInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })
