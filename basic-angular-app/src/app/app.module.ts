@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,8 +22,18 @@ import { BasicNavigationComponent } from './basic-navigation/basic-navigation.co
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input';
 import { SamplePage1Component } from './sample-page1/sample-page1.component';
 import { SamplePage2Component } from './sample-page2/sample-page2.component';
+import { SamplePage3Component } from './pages/sample-page3/sample-page3.component';
+import { SamplePage4Component } from './pages/sample-page4/sample-page4.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LogoutPageComponent } from './pages/logout-page/logout-page.component';
+
+import { CredentialInterceptor } from './interceptors/credential.interceptor';
+import { ApiErrorInterceptor } from './interceptors/api-error.interceptor';
+import { fakeApiInterceptorProvider } from './interceptors/fake-api.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,13 +41,18 @@ import { SamplePage2Component } from './sample-page2/sample-page2.component';
     BasicDashboardComponent,
     BasicNavigationComponent,
     SamplePage1Component,
-    SamplePage2Component
+    SamplePage2Component,
+    SamplePage3Component,
+    SamplePage4Component,
+    LoginPageComponent,
+    LogoutPageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatGridListModule,
@@ -45,6 +60,8 @@ import { SamplePage2Component } from './sample-page2/sample-page2.component';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
     LayoutModule,
     MatToolbarModule,
     MatSidenavModule,
@@ -52,7 +69,11 @@ import { SamplePage2Component } from './sample-page2/sample-page2.component';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: CredentialInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ApiErrorInterceptor, multi: true },
+    fakeApiInterceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

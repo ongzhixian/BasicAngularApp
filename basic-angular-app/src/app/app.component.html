@@ -1,1 +1,2 @@
-<app-basic-navigation></app-basic-navigation>
+<app-login-page *ngIf="!userProfile"></app-login-page>
+<app-basic-navigation *ngIf="userProfile"></app-basic-navigation>
